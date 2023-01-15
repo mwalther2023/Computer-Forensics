@@ -1,3 +1,0 @@
-We were able to recreate the findings in the book going through the same commands getting pslist psaux pstree netstat proc_maps bash and psenv, for memory_analysis we were unable to execute were linux_check_evt_arm we found a difference in linux_pslist with the last entry differing from the book result where the suspicious User ID for us was -1 compared to the long number in the book.
-
-With project 02 we intend to approach the memory analysis in a similar way as this with finding the PID of suspicious processes to run proc_maps with
