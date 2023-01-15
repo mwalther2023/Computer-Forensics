@@ -1,3 +1,0 @@
-When accessing the bash_history the output shows that user john installed two additional rootkits to xingyi which are shown as Poison and RK.
-Further investigating into the installation revealed that index2.php shows the successful installation of Poison.
-Through the bash_history we are also able to see a ./install.sh command executed while in the rk directory meaning this rootkit was also successfully installed as well.
