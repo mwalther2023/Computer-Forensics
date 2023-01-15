@@ -1,0 +1,34 @@
+Though obtaining users with mysql it was found the 2 main users are benji and tiago.
+tiago has user ID 1000 indicating it was created first while benji has ID 1001. 
+
+When pulling data related to lampiao it was shown that all files were accessed in 2018, this year is suspicious as its the only program to have been accessed at this time while everything else was in 2020. 
+
+At the begining of the command timeline it was shown that the initial user used was benji then root and lastly tiago.
+
+Through error.log at the start t.php was attempted to be created then suddenly there are errors for commands in t.php showing it was attempted to have been run.
+In this log the majority of commands were run in 2018 whic includes the SIGTERM errors returned.
+After php-reverse-shell.php was saved these following commands were run
+	rm: cannot remove '/tmp/f': Operation not permitted
+	mkfifo: cannot create fifo '/tmp/f': File exists
+	sh: 1: cannot create /tmp/f: Permission denied
+	rm: cannot remove '/tmp/f': Operation not permitted
+	mkfifo: cannot create fifo '/tmp/f': File exists
+	sh: 1: cannot create /tmp/f: Permission denied
+	rm: cannot remove '/tmp/f': Operation not permitted
+	mkfifo: cannot create fifo '/tmp/f': File exists
+	sh: 1: cannot create /tmp/f: Permission denied
+until a port connection succeeded on 1234.
+Once the SIGTERM errors no longer appear there are multiple client denied by server config errors printed out.
+
+towards the end of commands in error.log 
+	PHP Notice:  Use of undefined constant
+was returned suggesting another .php file was executed which leads into errors for a cow.c program that ends the file with 
+	Running ...
+	Received su prompt (Password: )
+	Root password is:   dirtyCowFun
+	Enjoy! :-)
+this return suggests that the root password was either adjusted or compromised.
+
+With access.log there are again multiple suspicous executions in 2018 mainly a POST commands for intall.php
+The multitude of GET commands run in 2018 suggest a copying of all or most of the files from the webserver.
+For a POST command run in the access log there is a webaddress which provides sql scipting for password cracking using a dictionary attack format.

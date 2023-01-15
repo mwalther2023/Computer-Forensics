@@ -1,0 +1,42 @@
+1. rootkit
+	Yes, PiMPz and SnwjT are rootkits installed on the system with PID's 4544 and 13311 respectively.
+	lampiao.sh is believed to be another rootkit installed on the system with the goal to get the root shell this process was found in the bash_history for the system it has PID 294
+2. keylogger
+	Yes, logkeys.log is a keylogger installed on the system this process was found in the bash_history for the system.
+3. reverse shell
+	Yes, revshell7777.bin is a reverse shell installed on the system this process was found in the bash_history for the system.
+4. ext4 extended attributes
+	Through running and discovering out of sequence inodes it reveals a number of them but fails to reveal much to prove information is being exfiltrated or an attempt to re-compromise the system on startup is happening.
+5. New account with root privileges created
+	Through the client interview there should only be one user and the root access, upon inspection of users through MySQL there are 2 users, benji and tiago.
+	With tiago having user ID 1000 indicating tiago is supposed to be the primary user but though program research its possible tiago is the author of multiple malicious files found on the system while also tiago's last login being in 2018 a drastic change from a majority of commands being used in 2020. 
+	Both users have read and write permissions indicating a suspicious user with elevated access.
+6. Existing system account was modified to allow interactive logins
+	3 failed login attempts were found from an unkown account. 
+	When searching the successful logins there were mutliple logins from benji and one from a proxy which is unidentified. 
+	The majority of these logins occured from the ip 192.168.56.1
+	According to bash histories at some point someone used su to become tiago and showed the contents of both /etc/shadow and /etc/passwd through a "cat" command.
+	The SSH service was restarted.
+7. Network was hijacked
+	netstat shows PiMPz and SnwJT processes have established connections with routing ports 35551 and 4433, which leads me to believe the network was hijacked to route traffic through a monitored interface. 
+	Both these processes failed to show up in SQL file metadata suggesting they have since been removed or are a network service.
+	Multiple TCP connections from IP 192.168.56.104:59420 to 192.168.56.1:7777 suggest data was being moved over these ports as their connection was established to either python or bash
+8. Software that supports file exfiltration or attack obfuscation
+	After finding the purpose for previously mentioned processes there were no other suspicious processes installed on the sytem that would support file exfiltration or attack obfuscation.
+9. Suspicious volumes mounted
+	Searching mounted volumes using its volatility command there does not appear to be any suspicious volumns on the target system based on the output behaviour of the mount volatility command output.
+10. kernel contains trojaned modules
+	Searching linux_lsmod there are no suspicious loaded kernel modules in the target system.
+	None of the listed modules appeared to have any strange output are any strange parameters pasted into any of these modules. 
+11. Existing executable files replaced with malware versions
+	With command timeline revshell7777.bin was moved into updatephp directory under sbin thus overwriting it. 
+	update-php was also accessed at the same time right before user directories and bash_history was accessed. 
+	This indicates a possiblity of the executable update-php was replaced with a malware version in this time frame.
+12. Dictionary attack was performed
+	A user had looked into the contents of /etc/passwd and /etc/shadow to reveal user information on the system. 
+	When analyzing the access.log there were multiple commands to access data on the system with a link to a known mysql dictionary attack program to attempt a password crack "http://sqlmap.org/".
+13. A shared credential attack was performed
+	The output of the check_fop volatility command returns nothing, thus there does not appear to have been a shared credential attack.
+14. Network card has been put into promiscuous mode
+	ifconfig has returned that there are no network cards in promiscuous mode.
+	Interfaces "lo" and "eth0" have "False" for promiscuous mode, proving neither were put into promiscuous mode.

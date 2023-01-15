@@ -1,0 +1,21 @@
+What issues are you having?
+We are having some funky stuff happening with an employee's computer, it was reported that processes not recognized were appearing. Boss was worried about our data being compromized.
+
+Were any other devices affected?
+Just that computer was affected that we know of. Data may have been pulled or other users might be compromised.
+
+What software is the computer running?
+It is a dev computer and runs webserver and apache.
+
+How long have these issues been occuring?
+This issue happened around 2 weeks ago.
+
+What is the affected computer built on?
+Ubuntu is the OS on the computer
+
+Do you have a list of known users?
+We do not have a list of known users. Only 2 users on the system would be root being the Boss or myself with the employee user.
+
+Have you opened any ports?
+Webserver port, sql database, SSH.
+

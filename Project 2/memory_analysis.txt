@@ -1,0 +1,19 @@
+At the beginning of the linux_bash command execution of cow.bin was run. Analysis of this process only revealed its use in error.log for what is believed to have been a password rewrite
+
+Suspicious processes PiMPz and SnwjT were found, they have PID 4544 and 13311. Finding these processes in linux_psenv they have APACHE_RUN_DIR and utilize user www-data indicating the commands in bash_history that use su www-data are linked to these processes.
+
+Process lampiao.sh while initially does not have any suspicious commands run with it, upon researching this process it was discovered to be potentially linked to a capture the flag program with the goal of getting the root shell.
+
+In linux_pslist there are multiple sh processes running utilizing a PPID that belongs to PiMPz.
+
+revshell7777.bin was found to be utilized 3 times in linux_bash this being a reverse shell proves its been installed on the system, two times it was used in rm between those commands suspicious commands were run `which printf` was run 10 times each time with a different string that followed a pattern of "\10\0..."
+The third time revshell7777.bin was used it was used in mv to /usr/sbin/updatephp
+
+At the end of linux_bash logkeys.log was found to have been executed, research shows this is a keylogger program which has been installed and run on the machine.
+
+While searching through linux_netstat both PiMPz and SnwJT were found to establish TCP port connections, 35551 and 4433 used for both processes, with what appears to be receiving ports indicating the system's network was hijacked to route traffic through a minitored interface
+
+2 users were found to be used in linux_bash tiago and benji. benji is only found once and in a less command for the user's .bash_history ran in 2018 while taigo was switched to mutiple times but in the year 2020. It is possible that the date has been modified for these commands to create the belief benji is the susporcious user since tiago has user ID 1000.
+
+In the 2018 commands lampiao.sh was run which through research is a rootkit installed on the system. When researching lampiao the sites that contained the program were all authored by tiago which further provides evidence that was the suspicious user. This program's goal from research is to get the root shell thus confirming that it should not be on the system.
+
