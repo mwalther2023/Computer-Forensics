@@ -1,0 +1,4 @@
+netstat -anp
+last
+lastb
+cat /etc/passwd
