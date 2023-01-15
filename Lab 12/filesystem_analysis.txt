@@ -1,0 +1,7 @@
+Through examining passwd with user ID 1001 we found user Michael Keaton. 
+In examining access.log.1 we found the dns-lookup.php being requested which is unusual. 
+When running grep against access.log we are unable to find a return for dns.lookup.php but found a request for it in access.log.1
+When using grep against error.log we found nothing when looking for either error or SIGTERM. The book utilized egrep against error.log.1 where we received multiple errors for password attempted access.
+zcat for mysql returned multiple errors in the same timeframe indicating a possible website attack
+
+With project 02 we intend to approach the filesystem analysis with similar commands to root out suspicious errors and when they occured to determine an approximate time of an attempted or successful attack on the webserver and website.

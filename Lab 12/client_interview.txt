@@ -1,0 +1,19 @@
+So how much do you and the webmaster know about Lunix?
+	Not much, the webmaster has just recently begun using Linux after moving to it from IIS as the webserver.
+Why did you decide to change to Linux from IIS?
+	We learned how insecure IIS was at a conference and decided to switch to something more secure.
+How long has this new system be up?
+	2 months
+What is the current system built on?
+	Apache 2 and MySQL
+What is the web software written in?
+	PHP
+
+For project 2 I intend to ask the client
+What issues are you having?
+What software is the server running?
+How long have these issues been occuring?
+How much do you know about linux?
+What is the system built on?
+Do you have a list of known users?
+Have you opened any ports?

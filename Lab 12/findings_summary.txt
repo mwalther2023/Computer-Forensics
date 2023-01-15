@@ -1,0 +1,8 @@
+For project 2 I will approach the findings summary by stating the inital day and time for when the system was determined to be initally compromised and why the attacker chose to used their newly found access.
+I will show the way in which the attacker gained access and if they managed to crack a user's password and if a password cracker tool was user, the user's password should be changed as those tools crack weak passwords,
+If any rootkits were installed on the system through their access.
+If any other user's passwords were compromised or if an attempt was made on a user.
+How the attacker primarily worked during this compromise.
+If any users were created to store compromised data, rootkits, or hide activity under.
+
+Compared to project 1 I missed details for my findings and plan to improve upon this going forward.
