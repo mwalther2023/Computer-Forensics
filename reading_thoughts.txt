@@ -1,6 +1,0 @@
-With the system being compromised actively setting up a new system to replace the old and compromised one is a good decision instead of attempting to salvage the old equipment.
-Before pulling the plug copying the information from the compromised system is the best way to be able to analyze the data. This further secures the data being in a seperate system from getting altered by the original infiltrator.
-initial-scan.sh provides the initial conlcusion that the system is compromised and allows us to further investigate to determine how and when it occurred.
-Having an SSH backdoor is a concern for remote infiltration to crack a user password.
-Utilizing MySQL to obtain a list of log-in fails and successes is an interesting way to determine what user was active or attempting to log-in during the time of rootkit downloads.
-This whole process while it seems complex seems to quickly piece together the situation of how the system became compromised.
