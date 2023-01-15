@@ -1,0 +1,14 @@
+1. lightdm is a user running a shell that shouldn't be.
+
+2. There are suspicious processes running called whoopsie and lightdm
+
+
+3. Suspicious commands to launch lightdm from the root and whoopsie from whoopsie when there was no defined change to whoopsie.
+Whoopsie became the UID after a command was run from the nobody UID
+
+4. New Accounts creadted are johnn, lightdm, and whoopsie.
+johnn is located in a hidden folder in home labeled .johnn
+	lightdm is in /bin/flase
+	whoopsie is in /bin/false
+
+5. Both lightdm and johnn are suspicious users who successfully logged in while john was logged in.

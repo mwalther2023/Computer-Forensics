@@ -1,0 +1,4 @@
+With this system it can be determined the system has been compromised. 
+Firstly a new user johnn was created and stored in a hidden folder and sucessfully logged in while the main user john was already logged in then prompted lightdm another user to log in as well right after. 
+Lightdm being a user stored in bin/false is running a shell when it should not be able to while also being launched from the root as a process. 
+Whoopsie also being a new user created in the bin/flase folder is shown as a running process with whoopsie being its UID.
