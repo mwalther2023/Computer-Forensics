@@ -1,0 +1,5 @@
+pure-ftpd is a free FTP Server with a strong focus on software security. FTP uses port 21 to open access ports for the device.
+
+dnsmasq provides DNS caching, DHCP server, router advertisement and network boot features. Port 53 is crucial for queries from DNS clients.
+
+sshd is the OpenSSH server process. It listens to incoming connections using the SSH protocol and acts as the server for the protocol. Port 22 is used by default to establish a ssh connection

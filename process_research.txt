@@ -1,0 +1,9 @@
+[rcu_sched] stands for "ready copy update". This process is used for synchronization to allows reads to occur concurrently with any updates.
+
+[crypto] is a cryptography framework in the Linux kernel. This process is used for various parts of the kernel that deal with cryptography, such as IPsec and dm-crypt.
+
+[kthreadd] is the kernel thread daemon. Creation of new kernel threads is done through this process so that a clean environment is obtained.
+
+[kthrotld] is a kernel thread which is 'controlling IO bandwidth on a request queue' by throttling requests
+
+[khubd] is a kernel thread and part of the Linux kernel USB core. This process monitors the USB hub and will configure USB devices when they are hot-plugged into the machine.

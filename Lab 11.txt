@@ -1,0 +1,35 @@
+pfevol linux_psaux | tee linux_psaux.txt
+pfevol linux_pstree | tee linux_pstree.txt
+pfevol linux_psenv | tee linux_psenv.txt
+pfevol linux_psxview | tee linux_psxview.txt 
+pfevol linux_proc_maps -p <PROCESS_ID> | tee linux_proc_maps.txt
+
+mkdir rootkit
+pfevol linux_procdump -p <PROCESS ID> -D ./rootkit/ | tee linux_procdump.txt
+xxd ./rootkit/* | head | tee rootkit_xxd_head.txt
+pfevol linux_bash | tee linux_bash.txt
+pfevol linux_bash_env | tee linux_bash_env.txt
+pfevol linux_bash_hash | tee linux_bash_hash.txt
+pfevol linux_check_idt | tee linux_check_idt.txt
+pfevol linux_check_modules | tee linux_check_modules.txt
+pfevol linux_check_syscall | tee linux_check_syscall.txt
+pfevol linux_check_tty | tee linux_check_tty.txt 
+pfevol linux_keyboard_notifiers | tee linux_keyboard_notifiers.txt
+pfevol linux_ifconfig | tee linux_ifconfig.txt
+
+pfevol linux_netstat | grep TCP | tee netstat_tcp.txt
+pfevol linux_netstat | grep UDP | tee netstat_udp.txt
+pfevol linux_netstat | grep UNIX | tee netstat_unix.txt
+pfevol linux_netfilter | tee linux_netfilter.txt
+pfevol linux_arp | tee linux_arp.txt
+pfevol linux_list_raw | tee linux_list_raw.txt 
+pfevol linux_mount | tee linux_mount.txt
+pfevol linux_enumerate_files | egrep '\s+/tmp' | tee linux_enumerate_files.txt
+
+mkdir ./vol_find_file
+pfevol linux_find_file -i <INODE ADDRESS> -O ./vol_find_file/<FILE NAME> 
+xxd ./vol_find_file/* | head | tee linux_find_file_xxd_head.txt
+	HINT: A successful file extraction will result in xxd output that is not all 0's 
+
+pfevol linux_lsof | tee linux_lsof.txt
+pfevol linux_pidhashtable | tee linux_hashtable.txt
