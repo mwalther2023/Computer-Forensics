@@ -1,0 +1,16 @@
+Upon arrival plugged in forensics workstation
+Set up net-cat listeners
+Plug in flash drive and load known good binaries
+execute initial-scan.sh
+Find shell listening on port 44965
+Using netcat to find port reporting itself as SSH-2.0-WinSSHD
+Through research discover this is a dropbear SSH backdoor and is possible to log-in through it
+Multiple attempts to log-in through john via SSH. May 3 @ 23:07
+Cannot be determined at this time whether these log-in attempts occured before or after the backdoor was installed
+New user found named "mysqll" with home directory "/usr/local/mysql"
+mysqll has userID 0 giving it root access
+
+For project 2 I intend to focus on 
+When the backdoor was installed to determine when the unsuccessful log-in attempts occured
+When "mysqll" user was created
+If "mysqll" executed any commands after its creation
